@@ -1,0 +1,32 @@
+<h1>Owner Sign UP</h1>
+<form name="addNew" #addNewForm="ngForm">
+  <div>
+    Name: <input type="text" [(ngModel)]="owner.name" name="name" required>
+    <div class="error" *ngIf="addNewForm.controls['name'].invalid && addNewForm.controls['name'].dirty">
+   
+    </div>
+  </div>
+
+  <div>
+    Phone: <input type="text" [(ngModel)]="owner.phoneNumber" name="phone" required>
+    <div class="error" *ngIf="addNewForm.controls['phone'].invalid && addNewForm.controls['phone'].dirty">
+    
+    </div>
+  </div>
+
+  <div>
+    City: <select [(ngModel)]="owner.city" name="city" required>
+      <option value="" blocked> Select City</option>
+      <option value="Tel-Aviv">Tel Aviv</option>
+      <option value="Ramat Gan">Ramat Gan</option>
+      <option value="Bat Yam">Bat Yam</option>
+      <option value="Holon">Holon</option>
+      <option value="Elait">Elait</option>
+    </select>
+    <div class="error" *ngIf="addNewForm.controls['city'].invalid && addNewForm.controls['city'].dirty">
+     
+    </div>
+  </div>
+
+  <button type="submit" (click)="addOwner(owner)">Sign UP!</button>
+</form>

@@ -1,0 +1,14 @@
+
+<div *ngFor="let p of products">
+  <h2>Product Name: {{p.name}}</h2> 
+  <h2>Product published date: {{p.publishDate | date}}</h2> 
+  <img [src]="p.image"  width="200" height="200">
+  <h2>Product Price: {{p.price}}</h2> 
+   <button (click)="BuyProduct(p.id)">Buy This item</button>
+   <button (click)="watchProduct(p.id)">Watch This Product</button>
+</div>
+
+
+  <nav>  
+    <a routerLink="/add-product">Add Product</a><br>  
+  </nav>

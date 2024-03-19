@@ -1,0 +1,20 @@
+<div *ngIf="product && owner">
+  <h2>Product id: {{ product.id }}</h2>
+  <h2>Product Name: {{ product.name }}</h2>
+  <h2>Product published date: {{ product.publishDate | date }}</h2> 
+  <img [src]="product.image" width="200" height="200">
+  <h3>Product Price: {{ product.price }}</h3>
+  <h3>Owner Name: {{ owner.name }}</h3>
+  <h3>Owner Phone Number: {{ owner.phoneNumber }}</h3>
+  <h3>Owner City: {{ owner.city }}</h3>
+</div>
+
+<div *ngIf="!product && !owner">
+  <p>Loading...</p>
+</div>
+
+<div>
+  <nav>
+    <a routerLink="/product-list">Product List</a><br>
+  </nav>
+</div>

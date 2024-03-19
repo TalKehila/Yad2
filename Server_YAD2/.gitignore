@@ -1,0 +1,40 @@
+# Visual Studio generated files
+.vs
+/bin
+/obj
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Rider generated files
+.idea/
+*.sln.iml
+*.iml
+
+# Resharper generated files
+_ReSharper*/
+*.ReSharper*
+*.DotSettings.user
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+
+# Coverity generated files
+cov-int/

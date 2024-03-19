@@ -1,0 +1,48 @@
+
+<form name="addNew" #addNewForm="ngForm">
+  <div>
+    Name: <input type="text" [(ngModel)]="product.name" name="name" required minlength="3" />
+    <div class="error" *ngIf="addNewForm.controls['name'].invalid && addNewForm.controls['name'].dirty">
+      This field is required and must be at least 3 characters.
+    </div>
+  </div>
+
+  <div>
+    Publish Date: <input type="date" [(ngModel)]="product.publishDate" name="publishDate" required />
+    <div class="error" *ngIf="addNewForm.controls['publishDate'].invalid && addNewForm.controls['publishDate'].dirty">
+      This field is required.
+    </div>
+  </div>
+
+  <div>
+    Image: <input type="text" [(ngModel)]="product.image" name="image" />
+  </div>
+
+  <div>
+    Price:
+    <input type="number" [(ngModel)]="product.price" name="price" required min="1" />
+    <span class="input-group-text">$</span>
+    <div class="error" *ngIf="addNewForm.controls['price'].invalid && addNewForm.controls['price'].dirty">
+      Please enter a valid price.
+    </div>
+  </div>
+
+  <div>
+    Owner ID: <input type="number" [(ngModel)]="product.ownerId" name="ownerId" required />
+    <div class="error" *ngIf="addNewForm.controls['ownerId'].invalid && addNewForm.controls['ownerId'].dirty">
+      This field is required.
+    </div>
+  </div>
+
+  <div class="error" *ngIf="addNewForm.form.invalid && addNewForm.form.dirty">
+    Some fields are not valid.
+  </div>
+
+  <button (click)="createNewProduct(product)" [disabled]="addNewForm.form.invalid">Add</button>
+</form>
+<div>
+  <nav>
+
+    <a routerLink="/product-list">Product List</a><br>
+  </nav>
+</div>
